@@ -11,3 +11,11 @@ services:
       - DEBUG=${DEBUG:-0}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  localstacksetup:
+    image: amazon/aws-cli:latest
+    depends_on:
+      - localstack
+    restart: "no"
+    volumes:
+      - ./init:/var/tmp
+    entrypoint: ["sh", "-c", "sh /var/tmp/init.sh"]
