@@ -1,0 +1,1 @@
+This repository is an example of creating an AWS SecretsManager in a local environment using LocalStack.
